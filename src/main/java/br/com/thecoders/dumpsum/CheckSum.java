@@ -17,6 +17,7 @@ public class CheckSum {
 
         Platform.runLater(() -> {
             App.getController().tfSha1.clear();
+            App.getController().tfSha256.clear();
             App.getController().btnCheckSum.setDisable(true);
             App.getController().btnOpen.setDisable(true);
         });
@@ -24,7 +25,8 @@ public class CheckSum {
 
         f = 0;
 
-        MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+        MessageDigest messageDigestSha1 = MessageDigest.getInstance("SHA-1");
+        MessageDigest messageDigestSha256 = MessageDigest.getInstance("SHA-256");
 
         byte[] buf = new byte[1024];
 
@@ -46,15 +48,21 @@ public class CheckSum {
                     }
                 }
 
-                messageDigest.update(buf, 0, c);
+                messageDigestSha1.update(buf, 0, c);
+                messageDigestSha256.update(buf, 0, c);
             }
             Platform.runLater(() -> App.getController().piProgress.setProgress(1D));
         }
 
         StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder2 = new StringBuilder();
 
-        for (byte b : messageDigest.digest()) {
+        for (byte b : messageDigestSha1.digest()) {
             stringBuilder.append(String.format("%02x", b));
+        }
+
+        for (byte b : messageDigestSha256.digest()) {
+            stringBuilder2.append(String.format("%02x", b));
         }
 
 
@@ -62,6 +70,7 @@ public class CheckSum {
             App.getController().btnCheckSum.setDisable(false);
             App.getController().btnOpen.setDisable(false);
             App.getController().tfSha1.setText(stringBuilder.toString().toUpperCase());
+            App.getController().tfSha256.setText(stringBuilder2.toString().toUpperCase());
         });
     }
 }

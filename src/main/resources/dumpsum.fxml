@@ -19,5 +19,11 @@
       <Button fx:id="btnCheckSum" layoutX="264.0" layoutY="120.0" mnemonicParsing="false" onAction="#checksum" text="CheckSum" />
       <Label layoutX="20.0" layoutY="40.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="FILE:" />
       <ProgressIndicator fx:id="piProgress" layoutX="161.0" layoutY="113.0" progress="0.0" />
+      <Label layoutX="20.0" layoutY="245.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="SHA-256:" />
+      <TextField fx:id="tfSha256" layoutX="77.0" layoutY="245.0" maxWidth="403.0" minWidth="493.0" prefHeight="25.0" prefWidth="403.0">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

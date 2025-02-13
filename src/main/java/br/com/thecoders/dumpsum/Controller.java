@@ -22,6 +22,9 @@ public class Controller {
     public TextField tfSha1;
 
     @FXML
+    public TextField tfSha256;
+
+    @FXML
     public TextField tfFilePath;
 
     @FXML
