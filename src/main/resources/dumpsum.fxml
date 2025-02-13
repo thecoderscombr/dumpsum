@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.thecoders.dumpsum.Controller">
+   <children>
+      <Button fx:id="btnOpen" layoutX="500.0" layoutY="40.0" mnemonicParsing="false" onAction="#open" text="Open" />
+      <TextField fx:id="tfFilePath" layoutX="77.0" layoutY="40.0" maxWidth="403.0" minWidth="403.0" prefHeight="25.0" prefWidth="403.0" />
+      <Label layoutX="20.0" layoutY="200.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="SHA-1:" />
+      <TextField fx:id="tfSha1" layoutX="77.0" layoutY="200.0" maxWidth="403.0" minWidth="403.0" prefHeight="25.0" prefWidth="403.0">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font></TextField>
+      <Button fx:id="btnCheckSum" layoutX="264.0" layoutY="120.0" mnemonicParsing="false" onAction="#checksum" text="CheckSum" />
+      <Label layoutX="20.0" layoutY="40.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="FILE:" />
+      <ProgressIndicator fx:id="piProgress" layoutX="161.0" layoutY="113.0" progress="0.0" />
+   </children>
+</AnchorPane>
